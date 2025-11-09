@@ -24,7 +24,7 @@ func main() {
     // Start tailing in a goroutine.
     go func() {
         // startAtEnd=false => read from beginning so you see existing lines
-        if err := ev.TailFileContext(ctx, "games_mp3.log", false, ch); err != nil {
+        if err := ev.TailFileContext(ctx, "YOUR_LOG_FILE_HERE.log", false, ch); err != nil {
             logger.Printf("tail error: %v", err)
         }
         close(ch)
