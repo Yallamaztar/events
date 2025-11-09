@@ -1,16 +1,5 @@
 # Plutonium T6 Log Reader (Go)
 
-## Features
-
-- Tails a log file and follows rotations/truncations
-- Parses common lines into typed structs:
-  - Player events (semicolon format like `J;GUID;clientNum;Name`)
-  - Chat lines (`say`, `sayteam`)
-  - Server lifecycle/config (`InitGame`, `ShutdownGame` with key/value pairs)
-- Generic fallback event when nothing matches
-- Simple, composable API (tail with a channel; parse helpers)
-- Optional player directory cache interface (`PlayerDirectory` + `PlayerSource`)
-
 ## Getting started
 
 Use the tailer to read a file and receive parsed events via a channel.
@@ -23,8 +12,6 @@ import (
     "fmt"
     "log"
 
-    // Adjust this import to your module path. If you keep this module name
-    // (see go.mod), the nested package is `github.com/Yallamaztar/events/events`.
     ev "github.com/Yallamaztar/events/events"
 )
 
