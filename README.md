@@ -1,9 +1,5 @@
 # Plutonium T6 Log Reader (Go)
 
-Lightweight Go helpers to tail a Plutonium T6 server log and parse each line into typed events.
-
-Note: The code currently lives under an `internal/` path, which Go intentionally makes non-importable from other modules. If you plan to publish this as a reusable package, move it to a non-internal path (e.g., `events/` at repo root) and update `go.mod`.
-
 ## Features
 
 - Tails a log file and follows rotations/truncations
