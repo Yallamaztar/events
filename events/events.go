@@ -29,14 +29,14 @@ type ServerEvent struct {
 
 type KillEvent struct {
 	BaseEvent
-	AttackerXUID      string
-	AttackerClientNum int
-	AttackerTeam      string
-	AttackerName      string
 	VictimXUID        string
 	VictimClientNum   int
 	VictimTeam        string
 	VictimName        string
+	AttackerXUID      string
+	AttackerClientNum int
+	AttackerTeam      string
+	AttackerName      string
 	Weapon            string
 	Damage            string
 	MeansOfDeath      string
