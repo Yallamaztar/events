@@ -29,18 +29,18 @@ type ServerEvent struct {
 
 type KillEvent struct {
 	BaseEvent
-	KillerXUID      string
-	KillerClientNum int
-	KillerTeam      string
-	KillerName      string
-	VictimXUID      string
-	VictimClientNum int
-	VictimTeam      string
-	VictimName      string
-	Weapon          string
-	Damage          string
-	MeansOfDeath    string
-	HitLocation     string
+	AttackerXUID      string
+	AttackerClientNum int
+	AttackerTeam      string
+	AttackerName      string
+	VictimXUID        string
+	VictimClientNum   int
+	VictimTeam        string
+	VictimName        string
+	Weapon            string
+	Damage            string
+	MeansOfDeath      string
+	HitLocation       string
 }
 
 func (b *BaseEvent) GetCommand() string           { return b.Command }

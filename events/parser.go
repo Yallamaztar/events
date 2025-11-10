@@ -47,9 +47,9 @@ func parseKillEvent(line string, ts *time.Duration, raw string) (*KillEvent, err
 		return nil, fmt.Errorf("not a kill event")
 	}
 
-	killerClientNum, err := strconv.Atoi(parts[2])
+	AttackerClientNum, err := strconv.Atoi(parts[2])
 	if err != nil {
-		return nil, fmt.Errorf("invalid killer client number %q: %w", parts[2], err)
+		return nil, fmt.Errorf("invalid Attacker client number %q: %w", parts[2], err)
 	}
 
 	victimClientNum, err := strconv.Atoi(parts[6])
@@ -63,18 +63,18 @@ func parseKillEvent(line string, ts *time.Duration, raw string) (*KillEvent, err
 			Command:   "K",
 			Raw:       raw,
 		},
-		KillerXUID:      parts[1],
-		KillerClientNum: killerClientNum,
-		KillerTeam:      parts[3],
-		KillerName:      parts[4],
-		VictimXUID:      parts[5],
-		VictimClientNum: victimClientNum,
-		VictimTeam:      parts[7],
-		VictimName:      parts[8],
-		Weapon:          parts[9],
-		Damage:          parts[10],
-		MeansOfDeath:    parts[11],
-		HitLocation:     parts[12],
+		AttackerXUID:      parts[1],
+		AttackerClientNum: AttackerClientNum,
+		AttackerTeam:      parts[3],
+		AttackerName:      parts[4],
+		VictimXUID:        parts[5],
+		VictimClientNum:   victimClientNum,
+		VictimTeam:        parts[7],
+		VictimName:        parts[8],
+		Weapon:            parts[9],
+		Damage:            parts[10],
+		MeansOfDeath:      parts[11],
+		HitLocation:       parts[12],
 	}, nil
 }
 
