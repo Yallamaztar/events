@@ -27,6 +27,22 @@ type ServerEvent struct {
 	Data map[string]string
 }
 
+type KillEvent struct {
+	BaseEvent
+	KillerXUID      string
+	KillerClientNum int
+	KillerTeam      string
+	KillerName      string
+	VictimXUID      string
+	VictimClientNum int
+	VictimTeam      string
+	VictimName      string
+	Weapon          string
+	Damage          string
+	MeansOfDeath    string
+	HitLocation     string
+}
+
 func (b *BaseEvent) GetCommand() string           { return b.Command }
 func (b *BaseEvent) GetTimestamp() *time.Duration { return b.Timestamp }
 func (b *BaseEvent) GetRaw() string               { return b.Raw }
